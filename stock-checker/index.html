@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stock Checker</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1><i class="fas fa-chart-line"></i> Stock Checker</h1>
+      <p>Real-time stock prices & 200-day moving averages</p>
+    </div>
+
+    <div class="search-box">
+      <input type="text" id="symbol" placeholder="Enter stock symbol (META, AAPL, GOOGL...)" />
+      <button onclick="checkStock()"><i class="fas fa-search"></i> Search</button>
+    </div>
+
+    <div id="result" class="result">
+      <div id="loading" class="loading" style="display: none;">
+        <div class="spinner"></div> Fetching data...
+      </div>
+
+      <div id="errorDiv" class="error-message" style="display: none;"></div>
+
+      <div id="stockData" style="display: none;">
+        <div class="stock-card">
+          <div class="stock-symbol" id="symbolName"></div>
+          <div class="price-info">
+            <div class="price-label">Current Price</div>
+            <div class="price-value" id="price"></div>
+          </div>
+        </div>
+
+        <div class="ma-section">
+          <div class="ma-label">200-Day Moving Average</div>
+          <div class="ma-value" id="ma"></div>
+
+          <div class="difference">
+            <span class="diff-label">Difference:</span>
+            <span class="diff-value" id="diff"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
